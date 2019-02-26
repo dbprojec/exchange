@@ -7,7 +7,13 @@ export class HttpUtil {
     static COIN_API_KEY = '856D86E9-4CF0-473D-96E8-E7F92A30EE90';
     public static ETH_URL = 'https://api.cryptonator.com/api/ticker/eth-usd';
     public static BTC_URL =  'https://api.cryptonator.com/api/ticker/btc-usd';
-    public static BTC_GRAPH_URL = 'https://api.blockchain.info/charts/transactions-per-second?timespan=5weeks&rollingAverage=8hours&format=json'
+    private GRAPH_API_KEY = '22d23de9d8c08c7f8cc65e48089e125ed5fa81504b66444c96173b41ba64c177';
+
+    private GRAPH_API_SECRET = '69b417fbf20bca642a9c66b941251859';
+
+    public static BTC_GRAPH_URL = 'https://min-api.cryptocompare.com/data/histominute?fsym=BTC&tsym=USD&limit=10';
+    public static ETH_GRAPH_URL = 'https://min-api.cryptocompare.com/data/histominute?fsym=ETH&tsym=USD&limit=10';
+
     public static getInstance(): HttpUtil {
         if (this.httpUtil != null) {
             return this.httpUtil
