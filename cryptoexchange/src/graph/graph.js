@@ -10,6 +10,12 @@ import Chart from "react-apexcharts";
 
 var LineChart = require("react-chartjs").Line;
 const styles = {
+  center: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
   card: {
     maxWidth: 275,
   },
@@ -71,7 +77,7 @@ class Graph extends Component {
       const records = []
       let i = 0;
       for (const record of data.Data) {
-        cats.push(record.time)
+        cats.push(new Date(record.time).getMinutes())
         records.push(record.close)
         i += 1;
         if (i == data.Data.length) {
@@ -98,7 +104,7 @@ class Graph extends Component {
     // const url = "https://api.blockchain.info/charts/transactions-per-second?timespan=5weeks&rollingAverage=8hours&format=json"
     return (
       !this.state.loaded?(<div></div>):(
-        <div>
+        <div className={classes.center}>
         <Typography className="header" variant="h2">{this.state.titles[this.state.url]}</Typography>
         <Chart
               options={
@@ -110,7 +116,7 @@ class Graph extends Component {
               }
               series={[this.state.graphData.series]}
               type="line"
-              width="500"
+              width="700"
             />
         <Card className={classes.card}>
           <CardContent>

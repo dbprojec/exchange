@@ -11,8 +11,8 @@ export class HttpUtil {
 
     private GRAPH_API_SECRET = '69b417fbf20bca642a9c66b941251859';
 
-    public static BTC_GRAPH_URL = 'https://min-api.cryptocompare.com/data/histominute?fsym=BTC&tsym=USD&limit=10';
-    public static ETH_GRAPH_URL = 'https://min-api.cryptocompare.com/data/histominute?fsym=ETH&tsym=USD&limit=10';
+    public static BTC_GRAPH_URL = 'https://min-api.cryptocompare.com/data/histoday?fsym=BTC&tsym=USD&limit=50';
+    public static ETH_GRAPH_URL = 'https://min-api.cryptocompare.com/data/histoday?fsym=ETH&tsym=USD&limit=10';
 
     public static getInstance(): HttpUtil {
         if (this.httpUtil != null) {
